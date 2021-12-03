@@ -30,8 +30,9 @@ function game() {
             }
             else
                 if (confirm("Попытки закончились, хотите сыграть еще?")) {
-                    game();
-                    guessNumber(10);
+
+                    number = Math.floor(100 * Math.random());
+                    guess(10);
                 }
         }
     }
