@@ -5,9 +5,9 @@ const isNumber = function (num) {
 }
 
 function game() {
-    const number = Math.floor(100 * Math.random());
-    console.log(number);
-    return function guess() {
+    let a;
+    return function guess(number) {
+        console.log(number);
         const numberUser = prompt("Угадай число от 1 до 100");
         if (!numberUser) {
             alert("Игра окончена");
@@ -20,11 +20,11 @@ function game() {
             guess();
         } else if (numberUser < number) {
             alert("Загаданное число больше");
-            guess();
+            a = number;
+            guess(a);
         }
     }
 }
-
 const guessNumber = game();
 
-guessNumber();
+guessNumber(Math.floor(100 * Math.random()));
